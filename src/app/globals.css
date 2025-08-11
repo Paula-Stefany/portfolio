@@ -3,4 +3,6 @@
 body{
     background: linear-gradient(to right, #070707, #1B1B1C, #0D0D0F);
     font-family: var(--font-poppins), Helvetica, sans-serif;
+    letter-spacing: 0.05em;
+    color: #ffffff;
 }

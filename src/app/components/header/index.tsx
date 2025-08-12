@@ -7,7 +7,7 @@ export function Header(){
     const [menuAberto, setMenuAberto] = useState(false);
 
     return(
-        <header className="h-[82px] w-full px-4 flex items-center fixed top-0 left-0 z-50 justify-between">
+        <header className="h-[82px] w-full px-4 flex items-center fixed top-0 left-0 z-50 justify-between bg-[#111111]/40 backdrop-blur">
             <a href="#" className="w-fit text-[#938EA7]/80 font-medium text-[16px] md:text-lg tracking-[0.15em]">
             DEV PAULA 👩‍💻
             </a>

@@ -19,9 +19,20 @@ export default function Home() {
         <section>
           <div className="relative h-[864px] text-white">
             <div className="absolute flex flex-col z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center items-center">
-              <span className="text-lg font-medium mb-1">Olá, bem vindo! :)</span>
-              <h1 className="font-medium text-[22px]">Me chamo Paula</h1>
+
+              <FaCode size={46}/>
+           
+              <h1 className="font-medium text-[22px]">Olá! Sou a Paula :)</h1>
               <span className="text-[16px] text-[#938ea7]">Dev FullStack | Front Focus</span>
+              <div className="flex gap-1 items-center mt-2">
+               
+                <a href="https://github.com/Paula-Stefany" target="_blank" rel="noopener noreferrer">
+                  <AiFillGithub size={26}/>
+                </a>
+                <a href="https://www.linkedin.com/in/paula-st%C3%A9fany-6141202b8/" target="_blank" rel="noopener noreferrer">
+                  <AiFillLinkedin size={26}/>
+                </a>
+              </div>
 
             </div>
             <Image src="/banner_image.jpg" 

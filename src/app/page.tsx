@@ -5,7 +5,11 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FaReact, FaNodeJs, FaFigma } from 'react-icons/fa';
 import { SiTailwindcss } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
-import { Fa0 } from "react-icons/fa6";
+import { FaProjectDiagram } from "react-icons/fa";
+import { FaCloudUploadAlt } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
+import { AiOutlineApi } from "react-icons/ai";
+import { FaGitAlt } from "react-icons/fa";
 
 
 export default function Home() {
@@ -105,6 +109,31 @@ export default function Home() {
             </div>
 
           </section>
+
+          <div className="flex justify-center items-center gap-2 flex-wrap">
+            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+              <FaProjectDiagram size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
+              <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">+ 10 projetos desenvolvidos</p>
+            </article>
+            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+              <FaCloudUploadAlt size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
+              <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Deploy com Render e Vercel</p>
+            </article>
+            
+            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+              <AiOutlineApi size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
+              <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Integração com APIs</p>
+            </article>
+            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+              <FaCode size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
+              <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Esperiência com Front e Back End</p>
+            </article>
+            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+              <FaGitAlt size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
+              <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Git e versionamento de código</p>
+            </article>
+          </div>
+
         </Container>
 
      

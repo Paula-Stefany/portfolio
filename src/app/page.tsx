@@ -341,11 +341,27 @@ export default function Home() {
               </article>
             </div>
 
-            
-
           </section>
 
         </Container>
+
+        <footer className="h-[358px] bg-[#111111] opacity-70 flex flex-col ">
+
+          <div className="flex flex-1 justify-center gap-2 flex-col  mt-[20px] ml-[20px]  md:w-[40%]">
+            <strong className="font-semibold text-[24px] bg-gradient-to-r from-[#BAB8C2] to-[#595762] bg-clip-text text-transparent tracking-[0.1em] mb-2 ">Obrigado por chegar até aqui!</strong>
+            <p className="text-[16px] mb-2">
+              Se quiser trocar uma ideia, dar um feedback ou só bater um papo sobre código, estou por aqui :)
+            </p>
+
+            <strong className="font-semibold text-[26px]">Contato</strong>
+            <a href="https://www.linkedin.com/in/paula-st%C3%A9fany-6141202b8/" target="_blank" rel="noopener noreferrer" className="w-fit">
+              <AiFillLinkedin size={26}/>
+            </a>
+          </div>
+
+          <p className="text-center mb-2 text-[14px]">Created by Paula Stéfany | 2025</p>
+      
+        </footer>
 
     </main>
   );

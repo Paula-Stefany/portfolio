@@ -147,6 +147,156 @@ export default function Home() {
             </article>
           </div>
 
+          
+          <section className="my-[50px] flex flex-col gap-2" id="projetos">
+            <h2 className="text-[16px] text-[#938EA7]">Projetos</h2>
+            <strong className="font-semibold text-[24px] bg-gradient-to-r from-[#BAB8C2] to-[#595762] bg-clip-text text-transparent tracking-[0.1em] mb-2 ">Cada linha de código conta uma história...</strong>
+
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+              <article className="h-[260px] md:h-[210px] min-w-[300px]">
+                <Link href="/">
+                  <div className="h-full w-full relative">
+                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
+                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
+                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
+                      Detalhes do projeto
+                      <FiArrowUpRight size={25}/>
+                      
+                    </button>
+                    
+                    <Image 
+                    src="/banner_image.jpg" 
+                    alt="Imagem do projeto" 
+                    priority={ true } 
+                    quality={ 100 }
+                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
+                    fill={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
+                    </Image>
+                  </div>
+                </Link>
+              </article>
+              <article className="h-[260px] md:h-[210px] min-w-[300px]">
+                <Link href="/">
+                  <div className="h-full w-full relative">
+                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
+                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
+                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
+                      Detalhes do projeto
+                      <FiArrowUpRight size={25}/>
+                      
+                    </button>
+                    
+                    <Image 
+                    src="/banner_image.jpg" 
+                    alt="Imagem do projeto" 
+                    priority={ true } 
+                    quality={ 100 }
+                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
+                    fill={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
+                    </Image>
+                  </div>
+                </Link>
+              </article>
+              <article className="h-[260px] md:h-[210px] min-w-[300px]">
+                <Link href="/">
+                  <div className="h-full w-full relative">
+                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
+                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
+                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
+                      Detalhes do projeto
+                      <FiArrowUpRight size={25}/>
+                      
+                    </button>
+                    
+                    <Image 
+                    src="/banner_image.jpg" 
+                    alt="Imagem do projeto" 
+                    priority={ true } 
+                    quality={ 100 }
+                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
+                    fill={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
+                    </Image>
+                  </div>
+                </Link>
+              </article>
+              <article className="h-[260px] md:h-[210px] min-w-[300px]">
+                <Link href="/">
+                  <div className="h-full w-full relative">
+                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
+                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
+                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
+                      Detalhes do projeto
+                      <FiArrowUpRight size={25}/>
+                      
+                    </button>
+                    
+                    <Image 
+                    src="/banner_image.jpg" 
+                    alt="Imagem do projeto" 
+                    priority={ true } 
+                    quality={ 100 }
+                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
+                    fill={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
+                    </Image>
+                  </div>
+                </Link>
+              </article>
+              <article className="h-[260px] md:h-[210px] min-w-[300px]">
+                <Link href="/">
+                  <div className="h-full w-full relative">
+                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
+                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
+                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
+                      Detalhes do projeto
+                      <FiArrowUpRight size={25}/>
+                      
+                    </button>
+                    
+                    <Image 
+                    src="/banner_image.jpg" 
+                    alt="Imagem do projeto" 
+                    priority={ true } 
+                    quality={ 100 }
+                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
+                    fill={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
+                    </Image>
+                  </div>
+                </Link>
+              </article>
+              <article className="h-[260px] md:h-[210px] min-w-[300px]">
+                <Link href="/">
+                  <div className="h-full w-full relative">
+                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
+                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
+                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
+                      Detalhes do projeto
+                      <FiArrowUpRight size={25}/>
+                      
+                    </button>
+                    
+                    <Image 
+                    src="/banner_image.jpg" 
+                    alt="Imagem do projeto" 
+                    priority={ true } 
+                    quality={ 100 }
+                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
+                    fill={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
+                    </Image>
+                  </div>
+                </Link>
+              </article>
+            </div>
+
+          </section>
+
+          
+
         </Container>
 
     </main>

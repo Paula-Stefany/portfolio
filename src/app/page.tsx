@@ -10,6 +10,8 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { AiOutlineApi } from "react-icons/ai";
 import { FaGitAlt } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -122,24 +124,24 @@ export default function Home() {
           </section>
 
           <div className="flex justify-center items-center gap-2 flex-wrap">
-            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+            <article className="w-full md:w-[170px] h-[170px] bg-[#232325] rounded-[10px] opacity-70 flex flex-col p-4 ">
               <FaProjectDiagram size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
               <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">+ 10 projetos desenvolvidos</p>
             </article>
-            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+            <article className="w-full md:w-[170px] h-[170px] bg-[#232325] rounded-[10px] opacity-70 flex flex-col p-4 ">
               <FaCloudUploadAlt size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
               <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Deploy com Render e Vercel</p>
             </article>
             
-            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+            <article className="w-full md:w-[170px] h-[170px] bg-[#232325] rounded-[10px] opacity-70 flex flex-col p-4 ">
               <AiOutlineApi size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
               <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Integração com APIs</p>
             </article>
-            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+            <article className="w-full md:w-[170px] h-[170px] bg-[#232325] rounded-[10px] opacity-70 flex flex-col p-4 ">
               <FaCode size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
               <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Esperiência com Front e Back End</p>
             </article>
-            <article className="w-[170px] h-[170px] bg-[#232325] rounded-[5%] opacity-70 flex flex-col p-4 ">
+            <article className="w-full md:w-[170px] h-[170px] bg-[#232325] rounded-[10px] opacity-70 flex flex-col p-4 ">
               <FaGitAlt size={26} color="#ffffff" className="absolute opacity-100 ml-0.5 mt-0.5"/>
               <p className="m-auto text-center font-medium text-[15px] text-[#938EA7]">Git e versionamento de código</p>
             </article>
@@ -147,7 +149,6 @@ export default function Home() {
 
         </Container>
 
-     
     </main>
   );
 }

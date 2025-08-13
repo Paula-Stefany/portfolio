@@ -295,7 +295,55 @@ export default function Home() {
 
           </section>
 
-          
+          <section className="my-[50px] flex flex-col gap-2" id="habilidades">
+            <h2 className="text-[16px] text-[#938EA7]">Habilidades</h2>
+            <strong className="font-semibold text-[24px] bg-gradient-to-r from-[#BAB8C2] to-[#595762] bg-clip-text text-transparent tracking-[0.1em] mb-2 ">Habilidades que transformam requisitos em aplicações reais</strong>
+
+            <div className="mt-6 grid grid-cols-1  md:grid-cols-3 gap-2">
+              <article className="w-full h-[283px] bg-[#232325] opacity-70 border border-[#938EA7] p-4 rounded-[20px]">
+
+                <h3 className="text-center text-lg mb-4">FRONT END</h3>
+                <div className="flex flex-wrap gap-2">
+                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    Next
+                  </strong>
+                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    Next
+                  </strong>
+                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    Next
+                  </strong>
+                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    Next
+                  </strong>
+                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    Next
+                  </strong>
+                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    Next
+                  </strong>
+                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    Next
+                  </strong>
+                  
+                </div>
+
+              </article>
+              <article className="w-full h-[283px] bg-[#232325] opacity-70 border border-[#938EA7] p-4 rounded-[20px]">
+
+                <h3 className="text-center text-lg">BACK END</h3>
+
+              </article>
+              <article className="w-full h-[283px] bg-[#232325] opacity-70 border border-[#938EA7] p-4 rounded-[20px]">
+
+                <h3 className="text-center text-lg">FERRAMENTAS</h3>
+
+              </article>
+            </div>
+
+            
+
+          </section>
 
         </Container>
 

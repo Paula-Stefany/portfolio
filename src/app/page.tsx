@@ -13,8 +13,67 @@ import { FaGitAlt } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 
+interface ProjectProps{
+  id: number; 
+  title: string;
+  technologies: string[];
+  description: string;
+  image_url: string;
+  project_url: string;
+  github_url: string;
 
-export default function Home() {
+}
+
+interface SkillsProps{
+  frontend: string[];
+  backend: string[];
+  ferramentas: string[];
+
+}
+
+async function getProjectsData(){
+
+  try{
+    const res = await fetch('http://localhost:5000/projects') 
+
+    if(!res.ok){
+      throw new Error(`HTTP Error! Status ${res.status}`);
+
+    }
+
+    return res.json();
+
+  } catch(err){
+    throw new Error('Failed to fetch projects data' + err);
+  }
+
+}
+
+async function getSkillsData(){
+
+  try{
+
+    const res = await fetch('http://localhost:5000/skills')
+
+    if(!res.ok){
+      throw new Error('HTTP error! Status: ' + res.status);
+
+    }
+
+    return res.json();
+
+  } catch (err){
+    throw new Error('Failed to fetch skills data: ' + err);
+  }
+
+}
+
+
+export default async function Home() {
+
+  const projects: ProjectProps[] = await getProjectsData();
+  const skills: SkillsProps = await getSkillsData();
+
   return (
     <main className="">
 
@@ -52,7 +111,7 @@ export default function Home() {
         </section>
 
         <Container>
-          <section className="my-[50px] flex flex-col justify-center items-center" id="sobre">
+          <section className="my-[90px] flex flex-col justify-center items-center" id="sobre">
 
             <h3 className="text-[14px] text-[#938ea7]">BIOGRAFIA</h3>
             <h1 className="font-semibold text-[26px] mb-6 tracking-[0.1em]">Quem sou eu?</h1>
@@ -96,12 +155,10 @@ export default function Home() {
               </div>
 
               <aside className="mt-6 lg:mt-0 lg:w-[50%] flex flex-col gap-2">
-                <div>
-                  
-                </div>
+                
                 <h2 className="text-[16px] text-[#938EA7]">Sobre mim</h2>
-                <strong className="font-semibold text-[24px] bg-gradient-to-r from-[#BAB8C2] to-[#595762] bg-clip-text text-transparent tracking-[0.1em] mb-2">DESENVOLVO SITES COMPLETOS,
-                DO FRONT AO BACK</strong>
+                <strong className="font-semibold text-[24px] bg-gradient-to-r from-[#BAB8C2] to-[#595762] bg-clip-text text-transparent tracking-[0.1em] mb-2">Desenvolvo sites completos,
+                do front ao back</strong>
                 <div className="flex flex-col gap-4">
                   <p className="text-[16px]">Desenvolvedora Full Stack, finalizando a graduação em Análise e Desenvolvimento de Sistemas. </p>
                   <p className="text-[16px]">Tenho experiência em projetos pessoais onde utilizei tecnologias como HTML, CSS, JavaScript, Python, React, Next.js e Node.js, com foco em aplicações web modernas.</p>
@@ -148,195 +205,84 @@ export default function Home() {
           </div>
 
           
-          <section className="my-[50px] flex flex-col gap-2" id="projetos">
+          <section className="my-[90px] flex flex-col gap-2" id="projetos">
             <h2 className="text-[16px] text-[#938EA7]">Projetos</h2>
             <strong className="font-semibold text-[24px] bg-gradient-to-r from-[#BAB8C2] to-[#595762] bg-clip-text text-transparent tracking-[0.1em] mb-2 ">Cada linha de código conta uma história...</strong>
 
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-              <article className="h-[260px] md:h-[210px] min-w-[300px]">
-                <Link href="/">
-                  <div className="h-full w-full relative">
-                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
-                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
-                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
-                      Detalhes do projeto
-                      <FiArrowUpRight size={25}/>
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-2">
+              { projects.map((item) => (
+                <article key={item.id} className="h-[260px] md:h-[210px] min-w-[300px]">
+                  <Link href="/">
+                    <div className="h-full w-full relative">
+                      <h3 className="p-2 ml-2 text-[17px] font-semibold absolute opacity-100 text-[#ffffff] z-30">{item.title}</h3>
+                      <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/10 backdrop-blur-md justify-center
+                      absolute rounded-[10px]  z-20 bottom-2 p-2 text-[15px]">
+                        Detalhes do projeto
+                        <FiArrowUpRight size={25}/>
+                        
+                      </button>
                       
-                    </button>
-                    
-                    <Image 
-                    src="/banner_image.jpg" 
-                    alt="Imagem do projeto" 
-                    priority={ true } 
-                    quality={ 100 }
-                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
-                    </Image>
-                  </div>
-                </Link>
-              </article>
-              <article className="h-[260px] md:h-[210px] min-w-[300px]">
-                <Link href="/">
-                  <div className="h-full w-full relative">
-                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
-                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
-                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
-                      Detalhes do projeto
-                      <FiArrowUpRight size={25}/>
-                      
-                    </button>
-                    
-                    <Image 
-                    src="/banner_image.jpg" 
-                    alt="Imagem do projeto" 
-                    priority={ true } 
-                    quality={ 100 }
-                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
-                    </Image>
-                  </div>
-                </Link>
-              </article>
-              <article className="h-[260px] md:h-[210px] min-w-[300px]">
-                <Link href="/">
-                  <div className="h-full w-full relative">
-                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
-                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
-                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
-                      Detalhes do projeto
-                      <FiArrowUpRight size={25}/>
-                      
-                    </button>
-                    
-                    <Image 
-                    src="/banner_image.jpg" 
-                    alt="Imagem do projeto" 
-                    priority={ true } 
-                    quality={ 100 }
-                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
-                    </Image>
-                  </div>
-                </Link>
-              </article>
-              <article className="h-[260px] md:h-[210px] min-w-[300px]">
-                <Link href="/">
-                  <div className="h-full w-full relative">
-                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
-                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
-                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
-                      Detalhes do projeto
-                      <FiArrowUpRight size={25}/>
-                      
-                    </button>
-                    
-                    <Image 
-                    src="/banner_image.jpg" 
-                    alt="Imagem do projeto" 
-                    priority={ true } 
-                    quality={ 100 }
-                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
-                    </Image>
-                  </div>
-                </Link>
-              </article>
-              <article className="h-[260px] md:h-[210px] min-w-[300px]">
-                <Link href="/">
-                  <div className="h-full w-full relative">
-                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
-                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
-                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
-                      Detalhes do projeto
-                      <FiArrowUpRight size={25}/>
-                      
-                    </button>
-                    
-                    <Image 
-                    src="/banner_image.jpg" 
-                    alt="Imagem do projeto" 
-                    priority={ true } 
-                    quality={ 100 }
-                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
-                    </Image>
-                  </div>
-                </Link>
-              </article>
-              <article className="h-[260px] md:h-[210px] min-w-[300px]">
-                <Link href="/">
-                  <div className="h-full w-full relative">
-                    <h3 className="p-2 ml-2 absolute opacity-100 text-[#ffffff] z-30">Linktree</h3>
-                    <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/5 backdrop-blur-md justify-center
-                    absolute rounded-[5px]  z-20 bottom-2 p-2 text-[15px]">
-                      Detalhes do projeto
-                      <FiArrowUpRight size={25}/>
-                      
-                    </button>
-                    
-                    <Image 
-                    src="/banner_image.jpg" 
-                    alt="Imagem do projeto" 
-                    priority={ true } 
-                    quality={ 100 }
-                    className="h-fit object-cover rounded-[5%] opacity-90 brightness-80 hover:opacity-100"
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
-                    </Image>
-                  </div>
-                </Link>
-              </article>
+                      <Image 
+                      src={`${item.image_url}`} 
+                      alt="Imagem do projeto" 
+                      priority={ true } 
+                      quality={ 100 }
+                      className="h-fit object-cover rounded-[10px] opacity-50 hover:opacity-60"
+                      fill={true}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">       
+                      </Image>
+                    </div>
+                  </Link>
+                </article>
+              )) }
+              
+              
             </div>
 
           </section>
 
-          <section className="my-[50px] flex flex-col gap-2" id="habilidades">
+          <section className="my-[90px] flex flex-col gap-2" id="habilidades">
             <h2 className="text-[16px] text-[#938EA7]">Habilidades</h2>
             <strong className="font-semibold text-[24px] bg-gradient-to-r from-[#BAB8C2] to-[#595762] bg-clip-text text-transparent tracking-[0.1em] mb-2 ">Habilidades que transformam requisitos em aplicações reais</strong>
 
             <div className="mt-6 grid grid-cols-1  md:grid-cols-3 gap-2">
               <article className="w-full h-[283px] bg-[#232325] opacity-70 border border-[#938EA7] p-4 rounded-[20px]">
 
-                <h3 className="text-center text-lg mb-4">FRONT END</h3>
+                <h3 className="text-center text-lg mb-5">FRONT END</h3>
                 <div className="flex flex-wrap gap-2">
-                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
-                    Next
+                  { skills.frontend.map((item, index) => (
+                    <strong key={index} className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    { item }
                   </strong>
-                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
-                    Next
-                  </strong>
-                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
-                    Next
-                  </strong>
-                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
-                    Next
-                  </strong>
-                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
-                    Next
-                  </strong>
-                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
-                    Next
-                  </strong>
-                  <strong className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
-                    Next
-                  </strong>
+                  )) }
                   
                 </div>
 
               </article>
               <article className="w-full h-[283px] bg-[#232325] opacity-70 border border-[#938EA7] p-4 rounded-[20px]">
 
-                <h3 className="text-center text-lg">BACK END</h3>
+                <h3 className="text-center text-lg mb-5">BACK END</h3>
+                <div className="flex flex-wrap gap-2">
+                  { skills.backend.map((item, index) => (
+                    <strong key={index} className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    { item }
+                  </strong>
+                  )) }
+                  
+                </div>
 
               </article>
               <article className="w-full h-[283px] bg-[#232325] opacity-70 border border-[#938EA7] p-4 rounded-[20px]">
 
-                <h3 className="text-center text-lg">FERRAMENTAS</h3>
+                <h3 className="text-center text-lg mb-5">FERRAMENTAS</h3>
+                <div className="flex flex-wrap gap-2">
+                  { skills.ferramentas.map((item, index) => (
+                    <strong key={index} className="py-1 px-3 border border-white rounded-[20px] text-[14px] font-normal">
+                    { item }
+                  </strong>
+                  )) }
+                  
+                </div>
 
               </article>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react"
+import Link from "next/link";
 
 export function Header(){
 
@@ -8,9 +9,9 @@ export function Header(){
 
     return(
         <header className="h-[82px] w-full px-4 flex items-center fixed top-0 left-0 z-50 justify-between bg-[#111111]/40 backdrop-blur">
-            <a href="#" className="w-fit text-[#938EA7]/80 font-medium text-[16px] md:text-lg tracking-[0.15em]">
+            <Link href="/" className="w-fit text-[#938EA7]/80 font-medium text-[16px] md:text-lg tracking-[0.15em]">
             DEV PAULA 👩‍💻
-            </a>
+            </Link>
 
             <button className="flex flex-col justify-between md:hidden h-6 w-8 " 
             onClick={() => setMenuAberto(!menuAberto)}

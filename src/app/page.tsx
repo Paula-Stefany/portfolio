@@ -12,17 +12,7 @@ import { AiOutlineApi } from "react-icons/ai";
 import { FaGitAlt } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
-
-interface ProjectProps{
-  id: number; 
-  title: string;
-  technologies: string[];
-  description: string;
-  image_url: string;
-  project_url: string;
-  github_url: string;
-
-}
+import { ProjectProps } from "./utils/types/project";
 
 interface SkillsProps{
   frontend: string[];
@@ -212,7 +202,7 @@ export default async function Home() {
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-2">
               { projects.map((item) => (
                 <article key={item.id} className="h-[260px] md:h-[210px] min-w-[300px]">
-                  <Link href="/">
+                  <Link href={`/details/${item.id}`}>
                     <div className="h-full w-full relative">
                       <h3 className="p-2 ml-2 text-[17px] font-semibold absolute opacity-100 text-[#ffffff] z-30">{item.title}</h3>
                       <button className="flex items-center left-1/2 transform -translate-x-1/2 w-[92%] cursor-pointer bg-[#554C4C]/10 backdrop-blur-md justify-center

@@ -67,7 +67,7 @@ export default async function Home() {
   return (
     <main className="">
 
-        <section>
+        <section id="inicio" >
           <div className="relative h-[864px] text-white">
             <div className="absolute flex flex-col z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center items-center">
 

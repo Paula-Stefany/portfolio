@@ -115,31 +115,36 @@ export default async function Home() {
               <div className="flex items-center justify-center lg:w-[50%]">
 
                 <span className="hidden lg:flex rotate-270 text-lg text-[#938EA7] tracking-[0.2em]">DESENVOLVEDORA</span>
-                <div>
-                  <div className="h-[398px] w-[320px] relative">
-                    <Image src="/fotominha.jpeg"
-                    alt="foto de perfil"
-                    priority={ true } 
-                    quality={ 100 }
-                    className="h-fit object-cover  opacity-60 brightness-90 rounded-[5%]"
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">
-                    </Image>
-                  </div>
-                  <div className="mt-4 gap-1">
-                    <p className="font-medium text-[22px]">PAULA STÉFANY</p>
-                    <p className="text-[16px] text-[#938EA7]">Dev FullStack | Front Focus</p>
-                    <div className="flex gap-1 items-center mt-1">
-                      <span className="block w-6 h-1 rounded bg-white"></span>
-                      <a href="https://github.com/Paula-Stefany" target="_blank" rel="noopener noreferrer">
-                        <AiFillGithub size={24}/>
-                      </a>
-                      <a href="https://www.linkedin.com/in/paula-st%C3%A9fany-6141202b8/" target="_blank" rel="noopener noreferrer">
-                        <AiFillLinkedin size={24}/>
-                      </a>
-                      <span className="block w-6 h-1 rounded bg-white"></span>
+                <div className="flex items-center m-auto w-full">
+                  <div className="w-full flex flex-col">
+                    
+                    <div className="h-[398px] w-full md:w-[320px] relative m-auto">
+                      <Image src="/fotominha.jpeg"
+                      alt="foto de perfil"
+                      priority={ true } 
+                      quality={ 100 }
+                      className="h-fit object-cover  opacity-60 brightness-90 rounded-[5%]"
+                      fill={true}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">
+                      </Image>
                     </div>
+                    <div className="mt-4 gap-1 w-fit sm:m-auto sm:flex sm:items-center sm:flex-col lg:block lg:m-0">
+                      <p className="font-medium text-[22px]">PAULA STÉFANY</p>
+                      <p className="text-[16px] text-[#938EA7]">Dev FullStack | Front Focus</p>
+                      <div className="flex gap-1.5 items-center mt-1">
+                        <span className="block w-6 h-1 rounded bg-white"></span>
+                        <a href="https://github.com/Paula-Stefany" target="_blank" rel="noopener noreferrer">
+                          <AiFillGithub size={26}/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/paula-st%C3%A9fany-6141202b8/" target="_blank" rel="noopener noreferrer">
+                          <AiFillLinkedin size={26}/>
+                        </a>
+                        <span className="block w-6 h-1 rounded bg-white"></span>
+                      </div>
+                    </div>
+
                   </div>
+                  
                 </div>
 
               </div>

@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'localhost',
         port: '5000',
         pathname: '/images/**', 
+      },
+      {
+        protocol: 'https',
+        hostname: 'api-portfolio-8ktz.onrender.com',
+        pathname: '/images/**',
       }
     ]
   }

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 
 interface PageProps{
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -53,7 +53,7 @@ async function getAleatoryProject() {
 
 export default async function Details({params}: PageProps) {
 
-  const { id } = params;
+  const { id } = await params;
   const project: ProjectProps = await getProjectData(id);
   const aleatoryGame: ProjectProps = await getAleatoryProject();
 

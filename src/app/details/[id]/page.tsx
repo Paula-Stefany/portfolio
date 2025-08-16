@@ -33,7 +33,7 @@ async function getProjectData(id: string) {
   
 }
 
-async function getAleatoryGame() {
+async function getAleatoryProject() {
   
   try{
     const res = await fetch(`${BASE_URL}/random`)
@@ -55,7 +55,7 @@ export default async function Details({params}: propsParams) {
 
   const { id } = params;
   const project: ProjectProps = await getProjectData(id);
-  const aleatoryGame: ProjectProps = await getAleatoryGame();
+  const aleatoryGame: ProjectProps = await getAleatoryProject();
 
   return (
     <div className="mt-[82px]">

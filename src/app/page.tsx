@@ -21,10 +21,12 @@ interface SkillsProps{
 
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
 async function getProjectsData(){
 
   try{
-    const res = await fetch('http://localhost:5000/projects') 
+    const res = await fetch(`${BASE_URL}/projects`) 
 
     if(!res.ok){
       throw new Error(`HTTP Error! Status ${res.status}`);
@@ -43,7 +45,7 @@ async function getSkillsData(){
 
   try{
 
-    const res = await fetch('http://localhost:5000/skills')
+    const res = await fetch(`${BASE_URL}/skills`)
 
     if(!res.ok){
       throw new Error('HTTP error! Status: ' + res.status);

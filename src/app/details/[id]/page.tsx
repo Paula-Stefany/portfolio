@@ -11,10 +11,13 @@ interface propsParams{
   params: { id: string };
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+
 async function getProjectData(id: string) {
 
   try{
-    const res = await fetch(`http://localhost:5000/projects/${id}`)
+    const res = await fetch(`${BASE_URL}/${id}`);
 
     if (!res.ok){
       throw new Error('HTTP error! Status: ' + res.status);
@@ -33,7 +36,7 @@ async function getProjectData(id: string) {
 async function getAleatoryGame() {
   
   try{
-    const res = await fetch('http://localhost:5000/projects/random')
+    const res = await fetch(`${BASE_URL}/random`)
 
     if (!res.ok){
       throw new Error('HTTP error! Status: ' + res.status);

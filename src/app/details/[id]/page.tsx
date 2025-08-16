@@ -7,7 +7,7 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import Link from "next/link";
 
 
-interface propsParams{
+interface PageProps{
   params: { id: string };
 }
 
@@ -51,7 +51,7 @@ async function getAleatoryProject() {
 
 }
 
-export default async function Details({params}: propsParams) {
+export default async function Details({params}: PageProps) {
 
   const { id } = params;
   const project: ProjectProps = await getProjectData(id);

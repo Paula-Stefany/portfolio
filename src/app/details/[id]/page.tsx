@@ -17,7 +17,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 async function getProjectData(id: string) {
 
   try{
-    const res = await fetch(`${BASE_URL}/${id}`);
+    const res = await fetch(`${BASE_URL}/projects/${id}`);
 
     if (!res.ok){
       throw new Error('HTTP error! Status: ' + res.status);
@@ -36,7 +36,7 @@ async function getProjectData(id: string) {
 async function getAleatoryProject() {
   
   try{
-    const res = await fetch(`${BASE_URL}/random`)
+    const res = await fetch(`${BASE_URL}/projects/random`)
 
     if (!res.ok){
       throw new Error('HTTP error! Status: ' + res.status);

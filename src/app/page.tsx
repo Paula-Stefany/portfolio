@@ -26,7 +26,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 async function getProjectsData(){
 
   try{
-    const res = await fetch(`${BASE_URL}/projects`) 
+    const res = await fetch(`${BASE_URL}/projects`, {next: {revalidate: 320}}) 
 
     if(!res.ok){
       throw new Error(`HTTP Error! Status ${res.status}`);
@@ -45,7 +45,7 @@ async function getSkillsData(){
 
   try{
 
-    const res = await fetch(`${BASE_URL}/skills`)
+    const res = await fetch(`${BASE_URL}/skills`, {next: {revalidate: 320}})
 
     if(!res.ok){
       throw new Error('HTTP error! Status: ' + res.status);

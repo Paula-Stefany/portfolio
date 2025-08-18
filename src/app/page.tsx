@@ -26,7 +26,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 async function getProjectsData(){
 
   try{
-    const res = await fetch(`${BASE_URL}/projects`) 
+    const res = await fetch(`${BASE_URL}/projects`, {next: {revalidate: 320}}) 
 
     if(!res.ok){
       throw new Error(`HTTP Error! Status ${res.status}`);
@@ -45,7 +45,7 @@ async function getSkillsData(){
 
   try{
 
-    const res = await fetch(`${BASE_URL}/skills`)
+    const res = await fetch(`${BASE_URL}/skills`, {next: {revalidate: 320}})
 
     if(!res.ok){
       throw new Error('HTTP error! Status: ' + res.status);
@@ -118,7 +118,7 @@ export default async function Home() {
 
                 <span className="hidden lg:flex rotate-270 text-lg text-[#938EA7] tracking-[0.2em]">DESENVOLVEDORA</span>
                 <div className="flex items-center m-auto w-full">
-                  <div className="w-full flex flex-col">
+                  <div className="w-full flex flex-col" >
                     
                     <div className="h-[398px] w-full md:w-[320px] relative m-auto">
                       <Image src="/fotominha.jpeg"
@@ -130,7 +130,7 @@ export default async function Home() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw">
                       </Image>
                     </div>
-                    <div className="mt-4 gap-1 w-fit sm:m-auto sm:flex sm:items-center sm:flex-col lg:block lg:m-0">
+                    <div className="mt-4  gap-1 w-fit sm:m-auto sm:flex sm:items-center sm:flex-col lg:flex lg:mx-auto lg:justify-center lg:items-center lg:mt-4 ">
                       <p className="font-medium text-[22px]">PAULA STÉFANY</p>
                       <p className="text-[16px] text-[#938EA7]">Dev FullStack | Front Focus</p>
                       <div className="flex gap-1.5 items-center mt-1">
